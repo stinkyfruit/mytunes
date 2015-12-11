@@ -1,4 +1,4 @@
-xdescribe('PlayerView', function() {
+describe('PlayerView', function() {
   var library, appView;
 
   beforeEach(function() {

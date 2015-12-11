@@ -15,11 +15,14 @@ var AppModel = Backbone.Model.extend({
     // listener event for passed in collection
     params.library.on('play', function(song){
       this.set('currentSong', song);
-//      this.get('songQueue').enqueue(song);
     }, this);
 
     params.library.on('enqueue', function(song) {
       this.get('songQueue').add(song);
+    }, this);
+
+    this.get('songQueue').on('stop', function (){
+      this.set('currentSong', null);
     }, this);
   }
 
